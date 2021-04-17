@@ -1,6 +1,5 @@
-module.exports = {
-    PORT: process.env.PORT || 5000,
+/*module.exports = {
+    PORT: process.env.PORT || 3003,
     NODE_ENV: process.env.NODE_ENV || 'production',
-    DATABASE_URL: process.env.DATABASE_URL || 'mysql://b9bdca4b0b9ce1@us-cdbr-east-03.cleardb.com/clearDB_heroku'
-    
-  }
+    DB_URL: process.env.DB_URL || 'postgresql://postgres@localhost/vacancies'
+  }*/
