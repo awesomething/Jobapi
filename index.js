@@ -3,17 +3,39 @@ const express = require('express')
 //const morgan = require('morgan')
 const cors = require('cors')
 const app = express();
-const mysql = require("mysql");
+const { PORT, DB_URL } = require('./config')
+const knex = require('knex')
 
-const db = mysql.createConnection({
-    user: "root",
-    host: "localhost",
-    password: "password",
-    database: "applicants",
-  });
+const db = knex({
+  client: 'pg',
+  connection: DB_URL
+})
 
-app.use(express.json());
-app.use(cors());
+app.set('db', db)
+
+app.get('*', (req, res) => {
+  res.json({ok: true});
+});
+
+const {CLIENT_ORIGIN} = require('./config');
+
+app.use(
+    cors({
+      origin: 'http://localhost:3000'
+    })
+);
+
+const morganOption = (NODE_ENV === 'production')
+  ? 'tiny'
+  : 'common';
+
+app.use(morgan(morganOption, {
+  skip: () => NODE_ENV === 'test',
+}))
+
+app.use(helmet())
+
+app.use(express.static('public'))
 
 app.post("/create", (req, res) => {
     const company = req.body.company;
