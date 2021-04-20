@@ -1,6 +1,6 @@
-# Jobstar
+# Jobstar API
 
-<h3>Post a contract job and hire top candidates.</h3>
+<h3>Our API lets you post a contract job and hire top candidates on the frontend.</h3>
 
 <h2><a href="https://jobstar.vercel.app">A link to live app</a></h2>
 
