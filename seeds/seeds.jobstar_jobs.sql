@@ -5,3 +5,5 @@ VALUES
 (3, 'Microsoft', '2', 'USA', 'software engineer', 135000),
 (4, 'Oracle', '1', 'USA', 'app developer', 130000),
 (5, 'Paypal', '1', 'USA', 'backend developer', 125000); 
+
+  ALTER SEQUENCE jobs RESTART WITH 12;  
