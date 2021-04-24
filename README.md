@@ -26,6 +26,43 @@
 <p> STEP 2 - Fast-track your hiring process and onboard people based on proof of work. Devs would ship small features and fix bugs frequently, while communicating with you on video call.</p>
 <p>STEP 3 - You get to decide at an interview for fulltime offer or longterm contract. They might not be ready for the fulltime job just yet, until they have engaged in a contract job with you.</p>
 
+The app lets you do the following: 
+* Create and Post Jobs
+* Delete Jobs
+* Update Wages
+
+
+## Technologies
+
+* Node and Express 
+  * RESTful API 
+* Testing 
+  * Supertest (integration) 
+  * Mocha and Chai (unit)
+* Database 
+  * MySql
+  
+## Production 
+
+Deployed via Heroku
+
+## API Endpoints
+```
+
+### Jobs Router
+```
+- /api/employees
+- - GET - gets all jobs 
+- - POST - creates a new job
+```
+
+### Delete/:id Router 
+```
+- /api/delete/:id 
+- - DELETE - deletes a job by id 
+- - PATCH - updates a wage by id 
+
+```
 
 
 ## Installing Jobstar API
@@ -36,7 +73,3 @@
 ## Deploying
 ##### When your new project is ready for deployment, add a new heroku application with heroku create. This will make a new git remote called "heroku" and you can then npm run deploy which will push to this remote's master branch.
 
-
-## Built With
-##### NodeJs
-##### PostgreSql
